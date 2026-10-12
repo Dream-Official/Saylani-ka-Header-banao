@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F7F8FC;
+    color: #333;
+    display: grid;
+}
+
+/* Navbar Styles[cite: 1] */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 70px 5px 50px;
+    background: #F7F8FC;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Dropdown Wrapper & Smooth Hover Logic */
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Rotate chevron icon slightly on hover if desired */
+.dropdown-wrapper:hover .chevron-up {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.chevron-up {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Hidden by default, smooth slide-down effect on hover */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    width: 1050px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.224s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+    border: 1px solid #eaeaea;
+}
+
+/* Show Mega Menu Smoothly on Hover */
+.dropdown-wrapper:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+
+/* Categories Grid Layout (5 columns) */
+.mega-menu-categories {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cat-column h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6b7280;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cat-column h4 i {
+    font-size: 10px;
+    color: #4b5563;
+}
+
+.cat-column a {
+    display: block;
+    font-size: 13px;
+    color: #374151;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-column a:hover {
+    color: #2563eb;
+}
+
+/* Top Courses Section */
+.mega-top-courses {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.top-courses-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4b5563;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.top-courses-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.tc-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.tc-card:hover {
+    border-color: #2563eb;
+}
+
+.tc-icon {
+    width: 36px;
+    height: 36px;
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: column;
+    border-radius: 8px;
+    font-size: 14px;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.tc-card h5 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.tc-card span {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* Mega Footer Link */
+.mega-footer {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.mega-footer a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.mega-footer a:hover {
+    text-decoration: underline;
+}
+
+.enrl-btn{
+    height: 20px;
+    display: flex;
+    width: 20px;
+    transform: rotate(0deg);
+  animation: bounceDiagonal 2s infinite ease-in-out;
+}
+@keyframes bounceDiagonal {
+  0%, 100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(0deg) translate(4px, -4px); /* Upar aur right ki taraf movement */
+  }
+}
+/*Dream ke bouncing icons:)*/
+.whatsapp-icon{
+      border: 1px solid #1D6CDC;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: #1D6CDC;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+}
+
+.message-icon{
+     height: 30px;
+     width: 30px;  
+     animation: continuousBounce 2.3s ease-in-out infinite;
+}
+
+@keyframes continuousBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); 
+  }
+}
+
+.icon-cri{
+    border: 2px solid lightblue;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    animation: borderPulse 2.3s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes borderPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.115); 
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+.whatsapp-icon{
+    position: fixed;
+}
+
+.comp-icon{
+    position: fixed;
+    top: 30%;
+    left: 13%;
+        height: 150px;
+     width: 180px;  
+     animation: continuousBounce 2.4s ease-in-out infinite;
+}
+
+.globe-icon{
+      position: fixed;
+    bottom: 30%;
+    right: 13%;
+        height: 200px;
+     width: 200px;  
+     animation: continuousBounce 2.4s ease-in-out infinite;
+}
+/*Dream ke bouncing icons khatam:( */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.saylani-img{
+    height: auto;
+    width: auto;
+    display: flex;
+}
+.logo-image{
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover{
+     transform: scale(1.1) rotate(3deg);
+}
+.brand-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #0d1b2a;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #1a73e8;
+}
+
+.nav-links i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.enroll-top-btn {
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.enroll-top-btn:hover {
+    background-color: #1557d0;
+}
+
+/* Hero Section Styles[cite: 1] */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content .highlight {
+    color: #1a73e8;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #5f6368;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1557d0;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #3c4043;
+    border: 2px solid #dadce0;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: #1a73e8;
+    color: #1a73e8;
+}
